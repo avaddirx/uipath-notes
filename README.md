@@ -21,5 +21,5 @@ inside for For Each Row ```CurrentRow.ItemArray```
 ## Skip Top two rows in the data table 
 ```DataTable_Variable.AsEnumerable.Skip(2).CopyToDataTable```
 
-## Skip Top two rows in the data table and filter add a filter to it so you do two things at once
+## Skip Top two rows in the data table and add a filter to it so you do two things at once
 ```DataTable_Variable.AsEnumerable.Skip(2).Where(Function(r) r(0).ToString.Trim<>"" ).CopyToDataTable```
