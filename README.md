@@ -23,3 +23,5 @@ inside for For Each Row ```CurrentRow.ItemArray```
 
 ## Skip Top two rows in the data table and add a filter to it so you do two things at once
 ```DataTable_Variable.AsEnumerable.Skip(2).Where(Function(r) r(0).ToString.Trim<>"" ).CopyToDataTable```
+## Remove header in the data table
+```MyDataTableText``` = ```MyDataTableText.Remove(0, MyDataTableText.IndexOf(Environment.NewLine)+2)```
