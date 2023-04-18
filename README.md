@@ -25,3 +25,5 @@ inside for For Each Row ```CurrentRow.ItemArray```
 ```DataTable_Variable.AsEnumerable.Skip(2).Where(Function(r) r(0).ToString.Trim<>"" ).CopyToDataTable```
 ## Remove header in the data table
 ```MyDataTableText``` = ```MyDataTableText.Remove(0, MyDataTableText.IndexOf(Environment.NewLine)+2)```
+or 
+```Dt.AsEnumerable.Skip(1).CopyToDataTable```
