@@ -27,3 +27,9 @@ inside for For Each Row ```CurrentRow.ItemArray```
 ```MyDataTableText``` = ```MyDataTableText.Remove(0, MyDataTableText.IndexOf(Environment.NewLine)+2)```
 or 
 ```Dt.AsEnumerable.Skip(1).CopyToDataTable```
+## Dispacher: Datatable —> String —> Orchestrator
+```YourQueueString = Newtonsoft.Json.JsonConvert.SerializeObject(YourDataTable)```
+
+## Performer: Orchestrator —> String —> Datatable
+```QueueItemData = Newtonsoft.Json.JsonConvert.DeserializeObject(Of DataTable)(out_TransactionItem.SpecificContent("YourQueueString").ToString)```
+QueueItemData will result as a Datatable.
