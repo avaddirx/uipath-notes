@@ -33,3 +33,6 @@ or
 ## Performer: Orchestrator —> String —> Datatable
 ```QueueItemData = Newtonsoft.Json.JsonConvert.DeserializeObject(Of DataTable)(out_TransactionItem.SpecificContent("YourQueueString").ToString)```
 QueueItemData will result as a Datatable.
+
+
+https://forum.uipath.com/t/getting-datatable-headers-as-variables/273043/8
