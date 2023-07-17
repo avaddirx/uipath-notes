@@ -36,3 +36,7 @@ QueueItemData will result as a Datatable.
 
 
 https://forum.uipath.com/t/getting-datatable-headers-as-variables/273043/8
+
+
+An even quicker method can be to use “DataTable”.Rows.IndexOf(“DataTable”.Rows.Find(“String”)) to find the first occurrence of a string. Removed the lengthy iteration through all rows. But I believe this only works if there was a primary key defined for the DT.
+ “DataTable”.Rows.IndexOf(“DataTable”.Rows.Find(“String”))
