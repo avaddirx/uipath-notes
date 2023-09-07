@@ -51,3 +51,7 @@ TableList | List(Of DataTable) =
 (From d in YourInputDT.AsEnumerable()
 Group d by k=d("GJ").toString.Trim into grp=Group
 Select t = grp.CopyToDataTable).toList
+
+
+## distinct and groupBy in a DT
+dt = dt_Raw.AsEnumerable().GroupBy(Function(x) x.Field(of Double)("ColumnName")).Select(Function(y) y.First()).CopyToDataTable
