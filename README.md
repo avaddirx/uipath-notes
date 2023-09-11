@@ -46,12 +46,16 @@ An even quicker method can be to use “DataTable”.Rows.IndexOf(“DataTable�
 ## split the datatable into multple datatables each per year
 
 Assign Activity:
-TableList | List(Of DataTable) =
-
-(From d in YourInputDT.AsEnumerable()
+TableList | List(Of DataTable) =(From d in YourInputDT.AsEnumerable()
 Group d by k=d("GJ").toString.Trim into grp=Group
 Select t = grp.CopyToDataTable).toList
 
 
+
 ## distinct and groupBy in a DT
-dt = dt_Raw.AsEnumerable().GroupBy(Function(x) x.Field(of Double)("ColumnName")).Select(Function(y) y.First()).CopyToDataTable
+```dt = dt_Raw.AsEnumerable().GroupBy(Function(x) x.Field(of Double)("ColumnName")).Select(Function(y) y.First()).CopyToDataTable```
+
+
+## Loop DT in reverse 
+loop a DT from last row to 1st row 
+```dt1 = dt.AsEnumerable.Reverse.CopyToDataTable```
