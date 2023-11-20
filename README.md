@@ -59,3 +59,7 @@ Select t = grp.CopyToDataTable).toList
 ## Loop DT in reverse 
 loop a DT from last row to 1st row 
 ```dt1 = dt.AsEnumerable.Reverse.CopyToDataTable```
+
+
+## check if WIN process is running - returns a boolean 
+```System.Diagnostics.Process.GetProcesses.AsEnumerable().Any(Function (prcRunning) prcRunning.ProcessName.ToLower.Trim.Equals("OUTLOOK".ToLower.Trim))```
