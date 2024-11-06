@@ -1,6 +1,9 @@
 # UiPath-Notes
 ## Convert DT column to list 
 ```List(of string) = ( From row in dt.AsEnumerable() Select Convert.Tostring(row(“ColumnName”)) ).ToList()```
+## Getting Unique Values from a List of Strings
+```listDistinct = listVar.Distinct().toList```
+
 ## Compare the elements of a list to each value of data row and output the elements that did not match into a datatable
 ```yourList.Except((From x In yourDT.AsEnumerable Let ID = x.Item(“ID”).ToString Select ID)).ToList```
 ## Rename Column Name in Datat Table
@@ -63,3 +66,8 @@ loop a DT from last row to 1st row
 
 ## check if WIN process is running - returns a boolean 
 ```System.Diagnostics.Process.GetProcesses.AsEnumerable().Any(Function (prcRunning) prcRunning.ProcessName.ToLower.Trim.Equals("OUTLOOK".ToLower.Trim))```
+
+
+
+
+
