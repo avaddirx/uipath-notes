@@ -1,4 +1,9 @@
 # UiPath-Notes
+
+## Groupby ColumnName
+
+```list of DataTables = (From d In dtData.AsEnumerable Group d By k=d("ColumnName").toString.trim Into grp=Group Select t = grp.CopyToDataTable).toList```
+
 ## Convert DT column to list 
 ```List(of string) = ( From row in dt.AsEnumerable() Select Convert.Tostring(row(“ColumnName”)) ).ToList()```
 ## Getting Unique Values from a List of Strings
