@@ -53,10 +53,10 @@ An even quicker method can be to use “DataTable”.Rows.IndexOf(“DataTable�
 
 ## split the datatable into multple datatables each per year
 
-Assign Activity:
+```Assign Activity:
 TableList | List(Of DataTable) =(From d in YourInputDT.AsEnumerable()
 Group d by k=d("GJ").toString.Trim into grp=Group
-Select t = grp.CopyToDataTable).toList
+Select t = grp.CopyToDataTable).toList```
 
 
 
