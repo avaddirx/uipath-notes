@@ -39,24 +39,24 @@ or
 ```YourQueueString = Newtonsoft.Json.JsonConvert.SerializeObject(YourDataTable)```
 
 ## Performer: Orchestrator —> String —> Datatable
-```QueueItemData = Newtonsoft.Json.JsonConvert.DeserializeObject(Of DataTable)(out_TransactionItem.SpecificContent("YourQueueString").ToString)```
+QueueItemData = Newtonsoft.Json.JsonConvert.DeserializeObject(Of DataTable)(out_TransactionItem.SpecificContent("YourQueueString").ToString)
 QueueItemData will result as a Datatable.
 
 
-https://forum.uipath.com/t/getting-datatable-headers-as-variables/273043/8
+[UiPath Forum Discussion](https://forum.uipath.com/t/getting-datatable-headers-as-variables/273043/8)
 
 
 An even quicker method can be to use “DataTable”.Rows.IndexOf(“DataTable”.Rows.Find(“String”)) to find the first occurrence of a string. Removed the lengthy iteration through all rows. But I believe this only works if there was a primary key defined for the DT.
- “DataTable”.Rows.IndexOf(“DataTable”.Rows.Find(“String”))
+``` “DataTable”.Rows.IndexOf(“DataTable”.Rows.Find(“String”))```
 
-
+----
 
 ## split the datatable into multple datatables each per year
 
-```Assign Activity:TableList | List(Of DataTable) =
+TableList | List(Of DataTable) =
 (From d in YourInputDT.AsEnumerable()
 Group d by k=d("GJ").toString.Trim into grp=Group
-Select t = grp.CopyToDataTable).toList```
+Select t = grp.CopyToDataTable).toList
 
 
 
